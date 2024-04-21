@@ -1,6 +1,6 @@
-import { FormEvent, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
+import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 interface NewNoteCardProps {
@@ -86,6 +86,8 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     if (speechRecognition) {
       speechRecognition.stop();
     }
+
+    return;
   }
 
   return (
@@ -156,7 +158,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                 </button>
               ) : (
                 <button
-                  type="submit"
+                  type="button"
                   onClick={handleSaveNote}
                   className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-500"
                 >
